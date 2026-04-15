@@ -43,7 +43,6 @@ class Appointment {
 
 // Appointment Manager
 class AppointmentManager {
-    ArrayList<Appointment> appointments = new ArrayList<>();
 
     // Check slot availability
     boolean isSlotAvailable(Doctor doc, String time) {
@@ -72,8 +71,8 @@ class AppointmentManager {
         for (Appointment a : appointments) {
             if (a.patient.id == patientId &&
                 a.timeSlot.equalsIgnoreCase(time) &&
-                a.status.equals("Booked")) {
-
+                a.status.equals("Booked")) 
+                
                 a.status = "Cancelled";
                 System.out.println("✅ Appointment cancelled!");
                 return;
@@ -103,9 +102,6 @@ public class HospitalSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Using ArrayList instead of array
-        ArrayList<Doctor> doctors = new ArrayList<>();
-        ArrayList<Patient> patients = new ArrayList<>();
 
         // Sample Data
         doctors.add(new Doctor(1, "Dr. Sharma", "Cardiologist"));
